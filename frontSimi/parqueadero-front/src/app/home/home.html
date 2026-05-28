@@ -1,0 +1,105 @@
+<main class="home-shell">
+
+  <!-- RESUMEN -->
+  <section class="summary">
+    <div>
+      <p class="eyebrow">Control de parqueadero</p>
+      <h1>Registro de vehículos e ingresos</h1>
+      <p class="summary-copy">
+        Gestiona el alta de vehículos y registra entradas desde una sola pantalla.
+      </p>
+    </div>
+
+    <div class="metric">
+      <span class="metric-label">
+        {{ ingresos.length }} ingresos registrados
+      </span>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <form class="panel" (ngSubmit)="registrarIngreso()">
+
+      <label>Placa</label>
+      <input
+        type="text"
+        name="placaIngreso"
+        [(ngModel)]="placaIngreso"
+
+        required
+      />
+      <div *ngIf="mensaje" style="color: green">
+        {{ mensaje }}
+      </div>
+      <label>Tipo</label>
+      <select name="tipo" [(ngModel)]="tipo">
+        <option value="CARRO">Carro</option>
+        <option value="MOTO">Moto</option>
+      </select>
+
+      <button type="submit">Registrar ingreso</button>
+
+    </form>
+  </section>
+
+  <!-- MENSAJES -->
+  <p class="notice success" *ngIf="mensaje">{{ mensaje }}</p>
+  <p class="notice error" *ngIf="error">{{ error }}</p>
+
+  <!-- TABLA -->
+  <section class="table-section">
+
+    <div class="table-header">
+      <div>
+        <p class="eyebrow">Actividad</p>
+        <h2>Ingresos recientes</h2>
+      </div>
+
+      <button (click)="cargarIngresos()">
+        Actualizar
+      </button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Placa</th>
+          <th>Tipo</th>
+          <th>Fecha ingreso</th>
+          <th>Fecha salida</th>
+          <th>Tiempo transcurrido</th>
+          <th>Valor</th>
+          <th>Registra salida</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let ingreso of ingresos">
+          <td>{{ ingreso.id }}</td>
+          <td>{{ ingreso.vehiculo?.placa }}</td>
+          <td>{{ ingreso.vehiculo?.tipo }}</td>
+          <td>{{ ingreso.fechaIngreso | date:'short' }}</td>
+          <td>
+            {{ ingreso.fechaSalida ? (ingreso.fechaSalida | date:'short') : '---' }}
+          </td>
+          <td>
+            {{ calcularTiempo(ingreso.fechaIngreso, ingreso.fechaSalida) }}
+          </td>
+          <td>
+            {{ calcularTarifa(ingreso.fechaIngreso, ingreso.fechaSalida) }}
+          </td>
+          <td>
+            <button (click)="registrarSalida(ingreso.id)">
+            Salir
+            </button>
+          </td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
