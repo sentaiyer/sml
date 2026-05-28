@@ -6,6 +6,10 @@
 /out-tsc
 /bazel-out
 **/firebase-adminsdk-*.json
+# Firebase / Google credentials
+*.json
+*firebase-adminsdk*.json
+src/main/resources/*.json
 # Node
 /node_modules
 npm-debug.log
