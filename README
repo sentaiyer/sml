@@ -1,0 +1,44 @@
+📌 Proyecto: Sistema de Ingreso y Parqueadero
+🚀 Descripción
+
+Aplicación desarrollada en Angular (frontend) y Spring Boot (backend) para la gestión de ingresos y salidas de vehículos en un parqueadero, con notificación por correo electrónico.
+
+🧰 Tecnologías utilizadas
+
+Angular, TypeScript, Spring Boot, Java 17+, Hibernate/JPA, REST API, MySQL (u otra base de datos), RestTemplate.
+
+⚙️ Requisitos previos
+
+Antes de ejecutar el proyecto asegúrate de tener instalado Node.js (>=16), Angular CLI (npm install -g @angular/cli), Java 17 o superior, Maven, MySQL y opcionalmente Postman para pruebas.
+
+▶️ Ejecución del Backend (Spring Boot)
+
+Clonar el repositorio con git clone <URL_DEL_REPO> y entrar a la carpeta backend. Configurar la base de datos en application.properties, por ejemplo:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/parqueadero
+spring.datasource.username=root
+spring.datasource.password=1234
+
+Luego compilar con mvn clean install y ejecutar con mvn spring-boot:run. El backend quedará disponible en http://localhost:8080.
+
+🌐 Ejecución del Frontend (Angular)
+
+Entrar a la carpeta frontend, instalar dependencias con npm install y ejecutar con ng serve. El proyecto estará disponible en http://localhost:4200.
+
+📡 Configuración de API
+
+En Angular se debe configurar la URL del backend en environment.ts:
+
+export const environment = {
+apiUrl: 'http://localhost:8080/api'
+};
+
+✉️ Módulo de correo
+
+El sistema utiliza un servicio externo de correo mediante API REST. Es necesario contar con un token Bearer válido y enviar correctamente los objetos receivers, configParams y email con sus campos obligatorios como subject, message e idUser.
+
+⚠️ Problemas comunes
+
+Si la tabla en Angular no se actualiza, revisar el binding del array, la estrategia de detección de cambios (ChangeDetectionStrategy) o forzar actualización con ChangeDetectorRef.
+Si aparece error 401 Unauthorized, el token puede ser inválido o expirado y se debe revisar headers.setBearerAuth(token).
+Si aparece error 400 Bad Request, faltan campos obligatorios o el JSON enviado no coincide con la estructura esperada por el backend.
