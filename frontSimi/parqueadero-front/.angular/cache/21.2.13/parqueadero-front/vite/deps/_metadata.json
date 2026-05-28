@@ -1,0 +1,70 @@
+{
+  "hash": "5803f339",
+  "configHash": "d41ccbe9",
+  "lockfileHash": "31596548",
+  "browserHash": "cfed7df2",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "dedeaca2",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "55087956",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "d09804e2",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "9efc5f59",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "84009d14",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "3cc44d05",
+      "needsInterop": false
+    },
+    "rxjs/operators": {
+      "src": "../../../../../../node_modules/rxjs/dist/esm5/operators/index.js",
+      "file": "rxjs_operators.js",
+      "fileHash": "b124b0ed",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-3GB6OLDI": {
+      "file": "chunk-3GB6OLDI.js"
+    },
+    "chunk-ZHDY2RXM": {
+      "file": "chunk-ZHDY2RXM.js"
+    },
+    "chunk-3XIE4H7A": {
+      "file": "chunk-3XIE4H7A.js"
+    },
+    "chunk-KVRNQ5I3": {
+      "file": "chunk-KVRNQ5I3.js"
+    },
+    "chunk-LVTIRJQK": {
+      "file": "chunk-LVTIRJQK.js"
+    },
+    "chunk-QCVGHOGP": {
+      "file": "chunk-QCVGHOGP.js"
+    }
+  }
+}
